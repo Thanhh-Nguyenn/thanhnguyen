@@ -3,6 +3,7 @@
 - Nguyễn Ngọc Thanh Nguyên - 3121410033
 - Đại Học Sài Gòn
 - Môn học: Phương pháp NCKH trong tin học
+- Giảng viên hướng dẫn: TS. Đỗ Như Tài
 
 ### Information 
   Trang web này được tạo ra nhằm lưu trữ các dự án cá nhân trong năm học 2024-2025. 
