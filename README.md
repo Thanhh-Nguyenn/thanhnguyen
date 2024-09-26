@@ -1,4 +1,4 @@
-# NCKH of Thanh Nguyen
+# NCKH of Thanh Nguyên
 ### Education
 Nguyễn Ngọc Thanh Nguyên - 3121410033
 Đại Học Sài Gòn
