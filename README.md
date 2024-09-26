@@ -1,4 +1,4 @@
-# Data Scientist
+# NCKH of Thanh Nguyen
 ### Education
 Physics, PhD
 ### Work Experience
