@@ -1,0 +1,63 @@
+package BLL;
+
+import DAO.BaiThiDAO;
+import DAO.LopHocDAO;
+import Models.BaiThi;
+import Models.CauHoi;
+import java.sql.SQLException;
+import java.util.List;
+
+public class BaiThiBLL {
+    private final BaiThiDAO baiThiDAO;
+    private final LopHocDAO lopHocDAO;
+
+    public BaiThiBLL() {
+        this.baiThiDAO = new BaiThiDAO();
+        this.lopHocDAO = new LopHocDAO();
+    }
+
+    public List<BaiThi> getAllBaiThi() throws SQLException {
+        System.out.println("BaiThiBLL.getAllBaiThi() started");
+        List<BaiThi> baiThis = baiThiDAO.getAllBaiThi(); 
+        System.out.println("BaiThiBLL.getAllBaiThi() finished, size: " + baiThis.size());
+        return baiThis;
+    }
+
+    public BaiThi getBaiThiById(int examId) throws SQLException {
+        return baiThiDAO.getBaiThiById(examId);
+    }
+
+    public void addBaiThi(BaiThi baiThi) throws SQLException {
+        String tenLop = baiThi.getClassName();
+        String maLop = lopHocDAO.getMaLopTheoTen(tenLop);
+        if (maLop != null) {
+            baiThi.setClassId(maLop);
+            baiThiDAO.addBaiThi(baiThi);
+        } else {
+            throw new SQLException("Không tìm thấy mã lớp cho tên lớp: " + tenLop);
+        }
+    }
+
+    public void updateBaiThi(BaiThi baiThi) throws SQLException {
+        String tenLop = baiThi.getClassName();
+        String maLop = lopHocDAO.getMaLopTheoTen(tenLop);
+        if (maLop != null) {
+            baiThi.setClassId(maLop);
+            baiThiDAO.updateBaiThi(baiThi);
+        } else {
+            throw new SQLException("Không tìm thấy mã lớp cho tên lớp: " + tenLop);
+        }
+    }
+
+    public void deleteBaiThi(int examId) throws SQLException {
+        baiThiDAO.deleteBaiThi(examId);
+    }
+
+    public List<CauHoi> getCauHoiByBaiThiId(int examId) throws SQLException {
+        return baiThiDAO.getCauHoiByBaiThiId(examId);
+    }
+
+    public void addCauHoiToBaiThi(int examId, String questionText) throws SQLException {
+        baiThiDAO.addCauHoiToBaiThi(examId, questionText);
+    }
+}
