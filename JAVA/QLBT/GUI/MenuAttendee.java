@@ -4,7 +4,7 @@ import Model.User;
 
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.JFrame; // Đây là import đúng
+import javax.swing.JFrame; 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -40,7 +40,7 @@ public class MenuAttendee extends JFrame {
         User attendee = null;
 
         try {
-            String DB_URL = "jdbc:mysql://localhost:3306/ql_thitracnghiem?serverTimezone=Asia/Ho_Chi_Minh";
+            String DB_URL = "jdbc:mysql://localhost:3306/ql_thitracnghiem";
             String DB_USER = "root";
             String DB_PASSWORD = "Thanh@1810";
 
@@ -70,7 +70,7 @@ public class MenuAttendee extends JFrame {
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Lỗi khi kết nối hoặc truy vấn cơ sở dữ liệu: " + e.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
-            return; // Dừng nếu có lỗi
+            return; 
         } finally {
             // Đóng kết nối, preparedStatement và resultSet trong khối finally
             try { if (resultSet != null) resultSet.close(); } catch (SQLException e) { e.printStackTrace(); }
@@ -101,12 +101,12 @@ public class MenuAttendee extends JFrame {
     private void addActionEvent() {
         buttonGoToExamViewMenuAttendee.addActionListener(event -> {
             this.dispose();
-            new RoomAttendee(loginUser); // Chuyển đến màn hình chọn kỳ thi (RoomAttendee đã được đổi tên)
+            new RoomAttendee(loginUser); 
         });
         buttonViewResultsViewMenuAttendee.addActionListener(event -> {
             this.dispose();
             try {
-                new ResultAttendee(loginUser); // Giữ nguyên tên ResultAttendee
+                new ResultAttendee(loginUser); 
             } catch (SQLException ex) {
                 Logger.getLogger(MenuAttendee.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -118,6 +118,5 @@ public class MenuAttendee extends JFrame {
     }
 
     private void createUIComponents() {
-        // Khởi tạo các component (nếu cần thiết)
     }
 }
