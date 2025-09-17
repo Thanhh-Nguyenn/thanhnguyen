@@ -1,0 +1,23 @@
+Phần 1: Thảo luận giới thiệu về trí tuệ nhân tạo nâng cao
+1. Các LLM lý luận như thế nào và có những giới hạn nào?
+=> Các mô hình ngôn ngữ lớn (LLM) không thực sự "lý luận" theo cách con người làm. Thay vào đó, chúng mô phỏng khả năng lý luận bằng cách phân tích và nhận dạng các mẫu (pattern) trong lượng dữ liệu khổng lồ mà chúng được đào tạo. Khi đưa ra một câu hỏi, LLM sẽ tìm kiếm các mối liên hệ và cấu trúc ngữ pháp tương tự trong dữ liệu đã học để tạo ra một phản hồi có vẻ hợp lý.
+Tuy nhiên, cách tiếp cận này có những hạn chế đáng kể:
+-	Ảo giác (Hallucination): Đây là một trong những giới hạn lớn nhất. LLM có thể tạo ra thông tin hoàn toàn sai sự thật nhưng nghe có vẻ rất thuyết phục. Điều này xảy ra khi chúng không tìm thấy mẫu phù hợp và phải "sáng tạo" một phản hồi dựa trên những gì chúng đã học, dẫn đến việc đưa ra thông tin không chính xác.
+-	Thiếu hiểu biết sâu sắc: LLM không có khả năng hiểu biết thế giới thực hoặc các khái niệm trừu tượng. Chúng chỉ xử lý các mối quan hệ thống kê giữa các từ và câu. Ví dụ, LLM có thể mô tả một quả táo nhưng không thực sự biết cảm giác khi cắn một quả táo là như thế nào.
+-	Thiên vị (Bias): Dữ liệu đào tạo của LLM thường phản ánh những định kiến, thành kiến và sai lệch tồn tại trong xã hội. Do đó, các phản hồi của chúng có thể vô tình thể hiện sự thiên vị về giới tính, chủng tộc hoặc văn hóa.
+2. Làm thế nào để đảm bảo rằng LLM tạo ra kết quả chính xác về mặt thực tế?
+=> Để giảm thiểu sai sót và tăng tính chính xác của LLM, chúng ta cần kết hợp nhiều phương pháp:
+-	Cải thiện dữ liệu đào tạo: Liên tục lọc và bổ sung dữ liệu chất lượng cao, đa dạng và ít thiên vị. Việc kiểm tra và chỉnh sửa dữ liệu thủ công giúp loại bỏ thông tin sai lệch ngay từ đầu.
+-	Kỹ thuật củng cố học tập từ phản hồi của con người (RLHF): Đây là một phương pháp quan trọng. Các nhà phát triển sẽ cung cấp phản hồi cho LLM về độ chính xác và tính hữu ích của câu trả lời. LLM sẽ học cách đưa ra các câu trả lời mà con người đánh giá cao hơn, từ đó giảm thiểu ảo giác và sai lệch.
+-	Sử dụng RAG (Retrieval-Augmented Generation): Thay vì chỉ dựa vào kiến thức đã học, LLM có thể truy xuất thông tin từ các nguồn đáng tin cậy bên ngoài như Wikipedia, cơ sở dữ liệu học thuật hoặc các tài liệu nội bộ, sau đó tạo ra câu trả lời. Điều này giúp LLM luôn cập nhật và đưa ra thông tin chính xác hơn.
+3. Làm thế nào để chúng ta có thể đền bù công bằng cho những người tạo ra dữ liệu được sử dụng để đào tạo LLM?
+=> Đây là một vấn đề phức tạp và chưa có giải pháp hoàn hảo. Tuy nhiên, có một số cách tiếp cận tiềm năng:
+-	Chương trình chia sẻ doanh thu: Các công ty phát triển LLM có thể trích một phần lợi nhuận để chia sẻ với các nhà sáng tạo nội dung, đặc biệt là những người có tác phẩm được sử dụng trong bộ dữ liệu đào tạo.
+-	Quỹ bản quyền tập thể: Thành lập một quỹ chung để thu thập tiền bản quyền từ các công ty công nghệ và phân phối lại cho các nhà văn, nghệ sĩ và nhà báo dựa trên mức độ đóng góp của họ.
+-	Ghi nhận tác giả và cấp phép: Xây dựng các hệ thống để LLM có thể tự động ghi nhận nguồn gốc của thông tin mà chúng sử dụng. Đồng thời, các công ty nên mua giấy phép sử dụng dữ liệu từ các tổ chức hoặc cá nhân.
+4. Chúng ta sử dụng LLM trong học tập như thế nào để việc học của con người không bị ảnh hưởng?
+=> LLM có thể trở thành một công cụ học tập mạnh mẽ nếu được sử dụng đúng cách. Quan trọng là không nên để LLM thay thế hoàn toàn quá trình tư duy và sáng tạo của con người.
+•	Dùng LLM như một công cụ hỗ trợ: Học sinh, sinh viên có thể dùng LLM để tóm tắt các bài báo dài, giải thích các khái niệm phức tạp một cách đơn giản hơn hoặc gợi ý các ý tưởng ban đầu.
+•	Phát triển kỹ năng tư duy phản biện: khuyến khích học sinh, sinh viên luôn kiểm tra chéo thông tin mà LLM cung cấp. Điều này giúp rèn luyện khả năng tư duy phản biện và đánh giá độ tin cậy của nguồn thông tin.
+•	Học cách đặt câu hỏi hiệu quả: Để nhận được câu trả lời tốt từ LLM, người dùng phải biết cách đặt câu hỏi chi tiết và cụ thể (prompt engineering). Đây là một kỹ năng quan trọng trong thế kỷ 21.
+•	Tập trung vào sự sáng tạo và giải quyết vấn đề: LLM có thể giúp làm các công việc tẻ nhạt, lặp đi lặp lại, cho phép học sinh, sinh viên dành nhiều thời gian hơn cho việc sáng tạo, làm việc nhóm và giải quyết các vấn đề phức tạp.
