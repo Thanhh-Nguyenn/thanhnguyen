@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trợ Lý Phân Loại Cảm Xúc Tiếng Việt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Phân Loại Cảm Xúc Tiếng Việt sử dụng Transformer</h1>
+        <p>Nhập văn bản (có thể viết tắt, thiếu dấu) để phân loại:</p>
+        
+        <textarea id="text_input" rows="4" placeholder="Vui lòng nhập văn bản tối thiểu 5 ký tự."></textarea>
+        <button id="classify_btn">Phân Loại Cảm Xúc</button>
+
+        <div id="result_box" class="result-box hidden">
+            <p><strong>Nhãn Dự Đoán:</strong> <span id="result_label"></span></p>
+            <p><strong>Xác Suất:</strong> <span id="result_score"></span></p>
+        </div>
+        <p id="message_box" class="message-box"></p>
+
+        <h2>Lịch Sử Phân Loại</h2>
+        <div class="history-controls">
+            <button id="clear_history_btn" class="clear-btn">Xóa Toàn Bộ Lịch Sử</button>
+        </div>
+        <table id="history_table">
+            <thead>
+                <tr>
+                    <th>Văn Bản Gốc</th>
+                    <th>Nhãn</th>
+                    <th>Xác Suất</th>
+                    <th>Thời Gian</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in history %}
+                <tr>
+                    <td>{{ item.text_input }}</td> 
+                    <td class="label-{{ item.predicted_label.lower() }}">{{ item.predicted_label }}</td>
+                    <td>{{ item.confidence_score*100 | round(2) }}%</td>
+                    <td>{{ item.timestamp }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
